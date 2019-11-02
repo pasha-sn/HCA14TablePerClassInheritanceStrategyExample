@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>        
+        <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:XE</property>
+        <property name="hibernate.connection.username">HitTheBooks</property>
+        <property name="hibernate.connection.password">oracle</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        
+        <!-- show sql queries in old fashion style formatted -->
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+        
+        <mapping class="com.infotech.entities.Employee"/>
+        <mapping class="com.infotech.entities.Student"/>
+        <mapping class="com.infotech.entities.Person"/>
+        
+		<!--properties for second cache using ehcache        
+        <property name="hibernate.cache.use_second_level_cache">true</property>
+        <property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhcacheRegionFactory</property> -->
+        
+    </session-factory>
+</hibernate-configuration>
+
